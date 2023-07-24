@@ -7,8 +7,21 @@
   - `npm run test-anagram`
 */
 
-function isAnagram(str1, str2) {
-
+function sortString(str) {
+    return [...str].sort().join('');
+}
+function isAnagram(str1, str2){
+    if(str1 == str2){
+    return true;
+  }else{
+    return false;
+  }
 }
 
-module.exports = isAnagram;
+const inputString1 = "rasp";
+const sortedString1 = sortString(inputString1);
+const inputString2 = "spar";
+const sortedString2 = sortString(inputString2);
+
+var ans = isAnagram(sortedString1,sortedString2);
+console.log(ans);
