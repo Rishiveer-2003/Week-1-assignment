@@ -8,8 +8,48 @@
   - `npm run test-expenditure-analysis`
 */
 
-function calculateTotalSpentByCategory(transactions) {
+/*function calculateTotalSpentByCategory(transactions) {
   return [];
 }
 
 module.exports = calculateTotalSpentByCategory;
+*/
+function solve(transactions){
+  var spendEstimates = {};
+  for (var i =0; i<transactions.length; i++){
+    var t = transactions[i];
+    if(spendEstimates[t.category]){
+      spendEstimates[t.category] = spendEstimates[t.category] + t.price;
+    } else{
+      spendEstimates[t.category] = t.price;
+    }
+  }
+  console.log(spendEstimates)
+}
+var transactions = [
+  {
+    itemName:"Water",
+    category:"drink",
+    price:20,
+    timestamp:"20-23" 
+  },
+  {
+    itemName:"jeeru",
+    category:"drink",
+    price:40,
+    timestamp:"20-23 "
+  },
+  {
+    itemName:"tablet",
+    category:"medicine",
+    price:200,
+    timestamp:"20-23" 
+  },
+  {
+    itemName:"elcipin",
+    category:"medicine",
+    price:400,
+    timestamp:"20-23" 
+  }
+]
+solve(transactions);
