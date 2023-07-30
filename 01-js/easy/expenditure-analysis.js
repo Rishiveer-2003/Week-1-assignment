@@ -18,6 +18,7 @@ function solve(transactions){
   var spendEstimates = {};
   for (var i =0; i<transactions.length; i++){
     var t = transactions[i];
+    //this if basically checks whether the category is already there or not in the spendEstimates object, if not there then it will create one
     if(spendEstimates[t.category]){
       spendEstimates[t.category] = spendEstimates[t.category] + t.price;
     } else{
